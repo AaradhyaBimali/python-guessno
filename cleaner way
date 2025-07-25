@@ -1,0 +1,23 @@
+choice=('r','p', 's')
+while True:
+    print("Rock paper or scissors(r/p/s)")
+    option = input().lower()
+    import random
+    computer= random.choice(choice)
+    if option not in choice:
+        print("Invalid choice, please try again.")
+        continue
+    elif(
+            (option == 'r' and computer=='s') or
+            (option == 'p' and computer=='r') or
+            (option == 's' and computer=='p')):
+        print("you win")
+    elif option == computer:
+        print("It's a tie")
+    else:
+        print("You lose")
+    print(f"Computer chose: {computer}")
+    play_again = input("Do you want to play again? (yes/no): ").lower()
+    if play_again != 'yes':
+        print("Thanks for playing!")
+        break
